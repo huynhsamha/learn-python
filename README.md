@@ -94,3 +94,17 @@ Change `pythonPath` and `linting/pylintPath` with path virtualenv.
     "python.linting.pylintPath": "~/python-virtualenv/bin/pylint",
 }
 ```
+
+## Install with some packages
+Syntax
+```
+pip install [name_package]
+```
+
+Packages:
+1. requests
+2. numpy
+3. matplotlib
+4. sympy
+5. scipy
+6. scikit-learn
