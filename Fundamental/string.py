@@ -37,3 +37,9 @@ print(len(word))
 
 for c in word: print(c)
 for i in range(len(word)): print(word[i])
+
+
+s = 'Hello Python, I\'m Stupid-Dog'
+print(s.capitalize())
+print(s.upper())
+print(s.lower())

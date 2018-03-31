@@ -1,21 +1,3 @@
-a = 5
-b = 6
-s = 'Hello Python, I\'m Stupid-Dog'
-
-print(a, '+', b, '=', a+b)
-
-print(s)
-print(s.capitalize())
-print(s.upper())
-print(s.lower())
-
-split = ', '
-array = ['Windows', 'Linux', 'MacOS']
-print(split.join(array))
-
-for i in range(3, 8): print(i)
-for i in range(len(array)): print(i, ':', array[i])
-
 class OS:
     'This is Operating Systems'
 
