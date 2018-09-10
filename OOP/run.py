@@ -1,53 +1,43 @@
 '''
-Multiple Inheritance in Python
+To overload the + sign, we will need to implement __add__() function in the class.
 
-Like C++, a class can be derived from more than one base classes in Python. 
-
+Overloading Comparison Operators in Python
+<, use __lt__, and so on
 '''
 
-class A:
-    def __init__(self):
-        print('A init')
-    def c0(self):
-        print('A -> c0')
-    def a1(self):
-        print('a1')
-    def a2(self):
-        print('a2')
 
-class B:
-    def __init__(self):
-        print('B init')
-    def c0(self):
-        print('B -> c0')
-    def b1(self):
-        print('b1')
-    def b2(self):
-        print('b2')
+class Point:
+    def __init__(self, x = 0, y = 0):
+        self.x = x
+        self.y = y
+    
+    def __str__(self):
+        return "({0},{1})".format(self.x,self.y)
+    
+    def __add__(self,other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Point(x,y)
 
+    def __lt__(self,other):
+        self_mag = (self.x ** 2) + (self.y ** 2)
+        other_mag = (other.x ** 2) + (other.y ** 2)
+        return self_mag < other_mag
 
-class C(A, B):
-    def __init__(self):
-        print('C init')
-    def a1(self):
-        print('a1 -> c1')
-    def b2(self):
-        print('b2 -> c2')
+p1 = Point(2,-3)
+p2 = Point(-1,2)
 
-c = C()
-c.a1()
-c.a2()
-c.b1()
-c.b2()
-c.c0()
+print(p1 + p2)
+print(p1 < p2)
+print(p1 > p2)
+print(p1 == p2)
+
 
 '''
 Output:
 
-C init
-a1 -> c1
-a2
-b1
-b2 -> c2
-A -> c0
+(1,-1)
+False
+True
+False
 '''
