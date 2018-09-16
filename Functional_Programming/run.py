@@ -1,42 +1,19 @@
 """
 Document:
-
 """
 
 
-animals = [
-    {'type': 'Dog', 'name': 'Lucy'},
-    {'type': 'Cat', 'name': 'Buddy'},
-    {'type': 'Rabbit', 'name': 'Jack'},
-    {'type': 'Cat', 'name': 'Duke'},
-    {'type': 'Rabbit', 'name': 'Sadie'},
-    {'type': 'Dog', 'name': 'Bella'},
-]
-
-
-import math
 import functools
+import operator
 
+lmax = lambda xs: functools.reduce(lambda x, y: x if x > y else y, xs)
+lmin = lambda xs: functools.reduce(lambda x, y: x if x < y else y, xs)
 
-sub = lambda a, b: a-b
-opposite = functools.partial(sub, 0) # default a = 0
+lsum = lambda xs: functools.reduce(operator.add, xs)
+lmul = lambda xs: functools.reduce(operator.mul, xs)
 
-print(sub(0, 5))
-print(opposite(5))
-'''
--5
--5
-'''
+lany = lambda pred, xs: functools.reduce(lambda x, y: x or pred(y), xs, False)
+lall = lambda pred, xs: functools.reduce(lambda x, y: x and pred(y), xs, True)
 
-
-
-distance = lambda x1, y1, x2, y2: math.sqrt((x1-x2)**2 + (y1-y2)**2)
-
-distance_O = functools.partial(distance, 0, 0) # default x1, y1 = 0, 0
-
-print(distance(0, 0, 4, 5))
-print(distance_O(4, 5))
-'''
-6.4031242374328485
-6.4031242374328485
-'''
+lmap = lambda func, xs: functools.reduce(lambda x, y: x + [func(y)], xs, [])
+lfilter = lambda func, xs: functools.reduce(lambda x, y: x + [y] if func(y) else x, xs, [])
