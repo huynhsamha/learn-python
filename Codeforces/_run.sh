@@ -1,0 +1,1 @@
+python3 "./_main.py" < "./_inp.txt"
