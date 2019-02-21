@@ -1,8 +1,0 @@
-{
-    "python.pythonPath": "/usr/local/opt/python/bin/python3.7",
-    "python.autoComplete.addBrackets": false,
-    "python.linting.enabled": true,
-    "python.linting.pylintPath": "~/python-virtualenv/bin/pylint",
-    "python.formatting.autopep8Path": "~/.local/bin/autopep8",
-    "python.linting.pylintEnabled": false
-}
